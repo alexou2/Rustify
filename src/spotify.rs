@@ -21,14 +21,11 @@ pub fn search(query: &str, search_type: &str) -> Result<Value, Box<dyn std::erro
 pub fn login() -> &'static str {
     const LOGIN_URL: &str = "https://accounts.spotify.com/api/token";
     const CONTENT_TYPE:&str = "Content-Type: application/x-www-form-urlencoded";
+
     let mut acces_token: &str = "";
     let client = reqwest::blocking::Client::new();
-    let mut response = client.post(LOGIN_URL).body("abc").send().expect("err");
-    let json_data = response.json::<serde_json::Value>().expect("msg");
-    print!("{:?}",json_data["url"]);
+    let mut response = client.post(LOGIN_URL).body(CONTENT_TYPE).send().expect("err");
+    let json_data = response.json::<serde_json::Value>();
+    // print!("{:?}",json_data["url"]);
     return "acces_token";
 }
-
-// curl -X POST "https://accounts.spotify.com/api/token" \
-//      -H "Content-Type: application/x-www-form-urlencoded" \
-//      -d "grant_type=client_credentials&client_id=0d65fded6a3842cc88530433b728f436&client_secret=98695a47a9ba449ca1b6f709c93762d2"
