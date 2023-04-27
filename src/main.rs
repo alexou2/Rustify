@@ -13,6 +13,8 @@ fn main() -> Result<(), reqwest::Error> {
     println!("The host is running {}", env::consts::OS);
 // println!("{}", to_string_pretty(&spotify::login()).unwrap());
     // println!("{:?}", spotify::search("lol", "track").unwrap());
+    let mut access_token = auth::auth().unwrap();
+
     Ok(())
 }
 
