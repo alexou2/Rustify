@@ -10,11 +10,14 @@ mod spotify;
 fn main() -> Result<(), reqwest::Error>  {
     println!("The host is running {}", env::consts::OS);
 
-    let response = reqwest::blocking::get("https://api.mangadex.org/manga")?;
+//     let response = reqwest::blocking::get("https://api.mangadex.org/manga")?;
     
-    let json_data = response.json::<serde_json::Value>()?;
+//     let json_data = response.json::<serde_json::Value>()?;
   
-println!("{}", json_data["data"][0]["attributes"]);
+// println!("{}", json_data["data"][0]["attributes"]);
+
+
+println!("{:?}", spotify::search("lol", "song").unwrap());
 Ok(())
 }
 
