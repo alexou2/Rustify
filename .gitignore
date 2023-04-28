@@ -1,2 +1,4 @@
 /target
-src/auth.rs
+# src/auth.rs
+spotify_creds.json
+src/return_sp_creds.rs

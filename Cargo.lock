@@ -936,6 +936,7 @@ version = "0.1.0"
 dependencies = [
  "reqwest",
  "rspotify",
+ "serde",
  "serde_json",
 ]
 
