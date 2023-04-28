@@ -15,9 +15,8 @@ fn main() -> Result<(), reqwest::Error> {
     // println!("{}", to_string_pretty(&spotify::login()).unwrap());
     // println!("{:?}", spotify::search("lol", "track").unwrap());
     let access_token = auth::auth().unwrap();
-    // let json_data = spotify::search("lol", "artist", access_token);
-    print!("{}", access_token);
-    // auth::read_creds();
+    let json_data = spotify::search("lol", "artist", access_token);
+    // print!("{}", access_token);
     Ok(())
 }
 

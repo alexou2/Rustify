@@ -4,8 +4,7 @@ use serde_json::Value;
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::BufReader;
-use crate::
-
+use crate::utils;
 
 // pub fn read_creds() -> [&'static str; 2] {
 // pub fn read_creds() -> (&'static str, &'static str) {
@@ -29,7 +28,7 @@ pub fn auth() -> Result<String, Box<dyn std::error::Error>> {
     // let client_id = "your-client-id";
     // let client_secret = "your-client-secret";
 
-    let [client_id, client_secret] = return_sp_creds::return_credits();
+    let [client_id, client_secret] = utils::return_credits();
     let auth_url = "https://accounts.spotify.com/api/token";
 
     let mut form_params = HashMap::new();
