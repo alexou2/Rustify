@@ -1,9 +1,4 @@
-use serde_json::json;
-use serde::{Deserialize, Serialize};
-use serde_json::Value;
 use std::collections::HashMap;
-use std::fs::File;
-use std::io::BufReader;
 use crate::utils;
 
 // pub fn read_creds() -> [&'static str; 2] {
@@ -22,7 +17,6 @@ use crate::utils;
 //     // return (client_id.to_string(), client_secret.to_string());
 // }
 
-const grant_type: &str = "client_credentials";
 
 pub fn auth() -> Result<String, Box<dyn std::error::Error>> {
     // let client_id = "your-client-id";
@@ -49,8 +43,4 @@ pub fn auth() -> Result<String, Box<dyn std::error::Error>> {
     println!("Access Token: {}", &access_token);
     let token = access_token;
     return Ok(token.to_string());
-}
-fn type_of<T>(_: &T) {
-    let type_of_var = format!("{}", std::any::type_name::<T>());
-    println!("{}", type_of_var)
 }
