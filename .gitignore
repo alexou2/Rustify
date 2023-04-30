@@ -1,6 +1,3 @@
 /target
-# src/auth.rs
-spotify_creds.json
-src/return_sp_creds.rs
-src/utils.rs
+
 src/utils.rs
