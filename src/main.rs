@@ -19,7 +19,9 @@ fn main() -> Result<(), reqwest::Error> {
     // let _json_data = spotify::search("suce ma bite", "artist", access_token);
     // print!("{}", access_token);
 
-json::read_file("src/json");
+let data = json::read_file("src/json.json");
+println!("{}", json::convert_to_json(&data.unwrap()));
+// json::convert_to_json(&data.unwrap());
     Ok(())
 }
 
