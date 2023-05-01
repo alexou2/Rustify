@@ -25,3 +25,9 @@ pub fn convert_to_json(json_text: &str) -> Value {
     // println!("{:?}", &json_obj["chapterName"]);
     return json_obj;
 }
+
+pub fn read_json(file_path: &str) -> Value {
+    let file_content = read_file(file_path).unwrap();
+
+    return convert_to_json(&file_content);
+}
