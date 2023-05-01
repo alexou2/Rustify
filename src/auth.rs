@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use crate::utils;
 
+
 // pub fn read_creds() -> [&'static str; 2] {
 // pub fn read_creds() -> (&'static str, &'static str) {
 //     let file = File::open("src/spotify_creds.json").expect("failed to open file");
@@ -16,7 +17,6 @@ use crate::utils;
 //     return (client_id, client_secret);
 //     // return (client_id.to_string(), client_secret.to_string());
 // }
-
 
 pub fn auth() -> Result<String, Box<dyn std::error::Error>> {
     // let client_id = "your-client-id";

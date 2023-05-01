@@ -9,14 +9,17 @@ use std::env;
 mod auth;
 mod spotify;
 mod utils;
+mod json;
 
 fn main() -> Result<(), reqwest::Error> {
     println!("The host is running {}", env::consts::OS);
     // println!("{}", to_string_pretty(&spotify::login()).unwrap());
     // println!("{:?}", spotify::search("lol", "track").unwrap());
-    let access_token = auth::auth().unwrap();
-    let _json_data = spotify::search("suce ma bite", "artist", access_token);
+    // let access_token = auth::auth().unwrap();
+    // let _json_data = spotify::search("suce ma bite", "artist", access_token);
     // print!("{}", access_token);
+
+json::read_file("src/json");
     Ok(())
 }
 
