@@ -15,14 +15,7 @@ pub fn read_file(file_name: &str) -> Result<String, Box<dyn std::error::Error>> 
 }
 
 pub fn convert_to_json(json_text: &str) -> Value {
-    // let mut json_obj = json!(json_text);
-    // json_obj =
-    // let json = to_string_pretty(&json_obj);
     let json_obj: Value = serde_json::from_str(json_text).expect("JSON was not well-formatted");
-
-    // print!("{:?}", to_string_pretty(&json_text).unwrap());
-    // println!("{}", serde_json::to_string_pretty(&json_text).unwrap());
-    // println!("{:?}", &json_obj["chapterName"]);
     return json_obj;
 }
 
